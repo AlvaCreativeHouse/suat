@@ -1,3 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Firmas Alva</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
+
+	<style type="text/css">
+a.btn  {
+    color: #fff;
+    background-color: #007bff !important;
+    border-color: #007bff;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+	</style>
+</head>
+<body>
+
+
+<div id="contenedor">  	
+
 <table border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; color:gray; font-family: Tahoma, sans-serif;">
 
 	<tbody>
@@ -43,3 +79,36 @@
 	</tbody>
 
 </table>
+	
+	</div>
+	
+<br><br>
+    <a onclick="copiarFirma()" name="Enviar" class="btn">Copiar</a>
+<br><br>  
+
+<script type="text/javascript">
+
+function copiarFirma() {
+      
+    var urlField = document.getElementById("contenedor");
+
+  // create a Range object
+  var range = document.createRange();
+
+  // set the Node to select the "range"
+  range.selectNode(urlField);
+
+
+  // add the Range to the set of window selections
+  var selectrange = window.getSelection(range);
+   selectrange.removeAllRanges();
+selectrange.addRange(range);
+
+  // execute 'copy', can't 'cut' in this case
+  document.execCommand('copy');
+
+}
+</script>
+	
+</body>
+</html>
